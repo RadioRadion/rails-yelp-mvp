@@ -1,0 +1,20 @@
+<h1><%= @restaurant.name %></h1>
+<ul>
+      <li>
+        Address : <%=  @restaurant.address  %><br>
+        phone : <%=  @restaurant.phone_number  %><br>
+        category : <%=  @restaurant.category  %><br>
+      </li>
+</ul>
+
+<h2>Reviews</h2>
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+      <li>
+        <%=  review['content']  %> : <b><%= review['rating'] %></b>
+<!--         <input id="toggle" type="checkbox"> -->
+      </li>
+  <% end %>
+</ul>
+
+<%= link_to "Retour à la liste des restaurants", restaurants_path %>
